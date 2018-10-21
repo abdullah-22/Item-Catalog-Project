@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "jumbotron.html" %}
+<hr>
+{% include "flash.html" %}
+<div class="d-flex flex-row">
+    <div class="col-6 p-2 d-flex flex-column">
+        <h4 class="text-muted">All Categories</h4>
+        {% for category in categories %}
+        <div class="p-2 card">
+            <div class="card-body">
+                <h5 class="class-title">{{ category.name }}</h5>
+                <a href="{{ url_for('showItems', category_name = category.name) }}">View items in this category</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-6 p-2 d-flex flex-column">
+    <h4 class="text-muted">Latest Items</h4>
+    {% for item in latest_items %}
+        {% for category in categories if item.category_id == category.id %}
+        <div class="p-2 card">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <div class="card-subtitle mb-2"><i>({{ category.name }})</i></div>
+                <a href="{{ url_for('showItem', category_name = category.name, item_name = item.name) }}">Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

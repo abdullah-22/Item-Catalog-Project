@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h4 class="text-muted">Add New Category</h4>
+    </div>
+</div>
+<hr>
+{% include "flash.html" %}
+<div class="row">
+    <div class="col-12">
+        <form action="{{ url_for('newCategory') }}" method="POST">
+            <div class="form-group row">
+                <label for="name" class="col-2 col-form-label"><h5 class="text-muted">Name:</h5></label>
+                <div class="col-10">
+                    <input type="text" class="form-control here" id="name" name="name" placeholder="Enter the name of new category"  maxlength="100" aria-describedby="nameHelpBlock">
+                    <span class="form-text text-muted" id="nameHelpBlock">Do not add duplicate name</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2"></div>
+                <div class="col-10 offset-2">
+                    <button type="submit" name="add" class="btn btn-outline-secondary">Add</button>
+                    <a href="{{url_for('showCategories')}}" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

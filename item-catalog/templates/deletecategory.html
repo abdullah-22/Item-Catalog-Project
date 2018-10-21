@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h4 class="text-muted">Delete: "{{ category.name }}"</h4>
+    </div>
+</div>
+<hr>
+{% include "flash.html" %}
+<div class="row justify-content-center">
+    <div class="col-10">
+        <div class="alert alert-danger" role="alert">
+            <h5>Are you sure to delete the category {{ category.name }} ???</h5>
+        </div>
+    </div>
+    <div class="col-12">
+        <form action="{{ url_for('deleteCategory', category_name = category.name )}}" method="POST">
+            <div class="form-group row justify-content-center">
+                <div class="col-8">
+                    <button type="submit" name="delete" class="btn btn-outline-danger">Delete</button>
+                    <a href="{{ url_for('showItems', category_name = category.name )}}" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
