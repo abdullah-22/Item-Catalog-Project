@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}{{'username'}}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h4 class="text-muted">My Items</h4>
+    </div>
+</div>
+<hr>
+{% include "flash.html" %}
+<div class="d-flex flex-row justify-content-center">
+    <div class="col-12 p-4 d-flex flex-column">
+        <div class="card-deck">
+            {% for item in items %}
+                {% for category in categories if item.category_id == category.id %}
+                <div class="col-6 nopadding">
+                    <div class="p-2 card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                {{ item.description }}
+                            </h6>
+                            <br>
+                            <p class="menu-price">Price ($): {{ item.price }}</p>
+                            <a href="{{ url_for('showItem', category_name = category.name, item_name = item.name) }}">Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

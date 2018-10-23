@@ -1,0 +1,17 @@
+{% if 'username' not in session %}
+    <div class="jumbotron">
+        <div class="jumbotron-message">
+            <h3>WELCOME TO SPORTS BAZAR</h3>
+            <p class="lead">ONE STOP MARKETPLACE FOR ALL YOUR SPORTING NEEDS</p>
+        </div>
+    </div>
+{% else %}
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src = "{{session.picture}}" class="user-picture">
+        </div>
+        <div class="col-7">
+            <h3 class="text-muted">{{session.username}}</h3>
+        </div>
+    </div>
+{% endif %}

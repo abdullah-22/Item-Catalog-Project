@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}{{category.name}}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <nav>
+            <ul class="nav nav-pills float-right">
+                {% if 'username' in session %}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary" href="{{url_for('editCategory', category_name = category.name ) }}">Edit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary" href="{{url_for('deleteCategory', category_name = category.name ) }}">Delete</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <h4 class="text-muted">{{ category.name }}</h4>
+    </div>
+</div>
+<hr>
+{% include "flash.html" %}
+<div class="row">
+    <div class="col-12 pl-5">
+        <ul class="nav nav-pills float-left">
+            {% if 'username' in session %}
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary" href="{{ url_for('newItem', category_name = category.name) }}">Add New Item</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+    <div class="col-12 p-4 d-flex flex-column">
+        <div class="card-deck">
+            {% for item in items %}
+            <div class="col-6 nopadding">
+                <div class="p-2 card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            {{ item.description }}
+                        </h6>
+                        <br>
+                        <p class="menu-price">Price ($): {{ item.price }}</p>
+                        <a href="{{ url_for('showItem', category_name = category.name, item_name = item.name) }}">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

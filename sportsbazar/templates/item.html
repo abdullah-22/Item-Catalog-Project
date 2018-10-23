@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}{{item.name}}{% endblock %}
+{% block content %}
+{% include "flash.html" %}
+<div class="row">
+    <div class="col-12 card">
+        <div class="card-body">
+            <h4 class="card-title">{{ item.name }}</h4>
+            <h5 class="card-subtitle mt-2 mb-2 text-muted">
+                {{ item.description }}
+            </h5>
+            <br>
+            <p class="menu-price">Price ($): {{ item.price }}</p>
+            <p>
+                Items left: {{item.quantity}}
+                <br>
+                Uploaded by: {{user.name}}
+            </p>
+            {% if 'username' in session%}
+                <P>
+                    <a href="{{url_for('editItem', category_name = category.name, item_name = item.name ) }}">Edit</a> |
+                    <a href="{{url_for('deleteItem', category_name = category.name, item_name = item.name ) }}">Delete</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
