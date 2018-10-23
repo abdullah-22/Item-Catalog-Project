@@ -27,6 +27,10 @@ APPLICATION_NAME = "SPORTS BAZAR"
 # Create anti-forgery state token
 @app.route('/login')
 def showLogin():
+    if 'username' in login_session:
+        flash('You are already logged in !')
+        return redirect(url_for('homepage'))
+
     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
                     for x in xrange(32))
     login_session['state'] = state
@@ -117,13 +121,14 @@ def gconnect():
     login_session['user_id'] = userId
 
     output = ''
-    output += '<h1>Welcome, '
-    output += login_session['username']
-    output += '!</h1>'
+    output += '<div class="row"><div class="col-4">'
     output += '<img src="'
     output += login_session['picture']
-    output += ' " style="width: 300px; height: 300px; border-radius: 150px;'
-    output += '-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
+    output += ' " style="width: 70%; height: 100%; border-radius: 150px;'
+    output += '-webkit-border-radius: 150px;-moz-border-radius: 150px;"></div>'
+    output += '<div class="col-8"><h4 class="text-muted">Welcome !<br>'
+    output += login_session['username']
+    output += '</h4></div></div>'
     flash("You are now logged in as %s" % login_session['username'])
     print "done!"
     return output

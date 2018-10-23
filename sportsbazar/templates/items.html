@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 {% block title %}{{category.name}}{% endblock %}
 {% block content %}
+{% if 'username' in session %}
+    {% include "jumbotron.html" %}
+{% endif %}
 <div class="row">
     <div class="col-12">
         <nav>

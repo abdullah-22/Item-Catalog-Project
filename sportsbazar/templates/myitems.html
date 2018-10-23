@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}{{'username'}}{% endblock %}
+{% block title %}{{ session.username }}{% endblock %}
 {% block content %}
+{% include "jumbotron.html" %}
 <div class="row">
     <div class="col-12">
         <h4 class="text-muted">My Items</h4>
@@ -17,7 +18,8 @@
                     <div class="p-2 card">
                         <div class="card-body">
                             <h5 class="card-title">{{ item.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">
+                            <div class="card-subtitle mb-2"><i>({{ category.name }})</i></div>
+                            <h6 class="mb-2 text-muted">
                                 {{ item.description }}
                             </h6>
                             <br>

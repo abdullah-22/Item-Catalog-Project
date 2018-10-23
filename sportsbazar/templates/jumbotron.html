@@ -5,13 +5,16 @@
             <p class="lead">ONE STOP MARKETPLACE FOR ALL YOUR SPORTING NEEDS</p>
         </div>
     </div>
+    <hr>
 {% else %}
     <div class="row">
-        <div class="col-3 offset-1">
+        <div class="col-3 offset-1 text-right">
             <img src = "{{session.picture}}" class="user-picture">
         </div>
         <div class="col-7">
-            <h3 class="text-muted">{{session.username}}</h3>
+            <h6 class="text-muted">Logged in as:</h6>
+            <h5 class="text-muted">{{session.username}}</h5>
         </div>
     </div>
+    <hr>
 {% endif %}

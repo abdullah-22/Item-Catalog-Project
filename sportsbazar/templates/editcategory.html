@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}{{category.name}}{% endblock %}
 {% block content %}
+{% include "jumbotron.html" %}
 <div class="row">
     <div class="col-12">
         <h4 class="text-muted">Edit: "{{ category.name }}"</h4>

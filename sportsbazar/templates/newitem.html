@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
-{% block title %}Items{% endblock %}
+{% block title %}{{category.name}}{% endblock %}
 {% block content %}
+{% include "jumbotron.html" %}
 <div class="row">
     <div class="col-12">
-        <h4 class="text-muted">Add New Item</h4>
+        <h4 class="text-muted">{{ category.name }} - Add New Item</h4>
     </div>
 </div>
 <hr>

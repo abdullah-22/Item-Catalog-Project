@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
 {% block title %}{{item.name}}{% endblock %}
 {% block content %}
+{% if 'username' in session %}
+    {% include "jumbotron.html" %}
+{% endif %}
 {% include "flash.html" %}
 <div class="row">
     <div class="col-12 card">
         <div class="card-body">
             <h4 class="card-title">{{ item.name }}</h4>
-            <h5 class="card-subtitle mt-2 mb-2 text-muted">
+            <div class="card-subtitle mb-2"><i>({{ category.name }})</i></div>
+            <h5 class="mt-2 mb-2 text-muted">
                 {{ item.description }}
             </h5>
             <br>

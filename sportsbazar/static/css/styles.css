@@ -4,6 +4,21 @@ body {
     padding-bottom: 20px;
     background-color: #212529;
   }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.75rem
+  }
+  h6 {
+    font-size: 0.6rem
+  }
   nav li{
     list-style: none;
     margin: 0 2px;
@@ -15,7 +30,7 @@ body {
   hr {
     display: block;
     border-bottom: 1px solid dimgray;
-    margin: 1rem;
+    margin: 0.5rem;
   }
 
 
@@ -29,7 +44,7 @@ body {
 
   /* Custom page header */
   .header {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid lightgray;
   }
   /* Make the masthead heading the same height as the navigation */
@@ -43,7 +58,7 @@ body {
   }
   .header-logo {
     margin: 0;
-    max-width: 70%;
+    max-width: 60%;
   }
   .btn-outline-secondary{
     color: lightgray;
@@ -91,7 +106,7 @@ body {
   /* Custom page footer */
   .footer {
     text-align: end;
-    padding-top: 19px;
+    padding-top: 20px;
     color: #777;
     border-top: 1px solid #e5e5e5;
   }
@@ -137,7 +152,7 @@ body {
     }
     /* Space out the masthead */
     .header {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
@@ -145,57 +160,29 @@ body {
     }
   }
 
-  /* Responsive text
-  @include media-breakpoint-up(sm) {
-    html {
-      font-size: 0.5rem;
-    }
-    h1{
-      font-size: 1.5rem;
-    }
-    h2{
-      font-size: 1.2rem;
-    }
-    h3{
-      font-size: 1rem;
-    }
-    h4{
-      font-size: 0.8rem;
-    }
-  }
+  /* Media queries to implement responsiveness on different screen sizes */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1rem; }
+}
 
-  @include media-breakpoint-up(md) {
-    html {
-      font-size: 0.8rem;
-    }
-    h1{
-      font-size: 1.8rem;
-    }
-    h2{
-      font-size: 1.5rem;
-    }
-    h3{
-      font-size: 1.2rem;
-    }
-    h4{
-      font-size: 1rem;
-    }
-  }
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1rem; }
+}
 
-  @include media-breakpoint-up(lg) {
-    html {
-      font-size: 1rem;
-    }
-    h1{
-      font-size: 2rem;
-    }
-    h2{
-      font-size: 1.8rem;
-    }
-    h3{
-      font-size: 1.5rem;
-    }
-    h4{
-      font-size: 1.2rem;
-    }
-  }*/
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.75rem }
+}

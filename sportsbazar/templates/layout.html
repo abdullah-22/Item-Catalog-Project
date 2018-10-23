@@ -27,7 +27,7 @@
             <div class="header clearfix">
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
-                        <a class="nav-link float-left h3 text-muted font-weight-bold" href="{{ url_for('homepage') }}">
+                        <a class="nav-link float-left" href="{{ url_for('homepage') }}">
                             <img src="{{ url_for('static', filename='img/logo.png')}}" class="img-fluid header-logo" alt="SPORTS BAZAR">
                         </a>
                     </div>
@@ -58,9 +58,9 @@
                 </div>
             </div>
 
-            <div class="container mt-3">
+            <div class="container mt-2">
                 {% block content %}
-                {% endblock %}
+                {% endblock content%}
             </div>
 
             <footer class="footer">
@@ -69,6 +69,8 @@
 
             <!--JavaScript at end of body for optimized loading-->
             <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+            {% block script %}
+            {% endblock script %}
         </div>
     </body>
 

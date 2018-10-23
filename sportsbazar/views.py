@@ -203,6 +203,17 @@ def editCategory(category_name):
         return redirect(url_for('showCategories'))
 
     if (request.method == 'POST'):
+        # Check for duplicate with category name
+        if request.form['name'] != categoryToEdit.name:
+            category = session.query(Category).filter(Category.name == request.form['name'])
+            isDuplicate = (session.query(literal(True)).
+                              filter(category.exists()).scalar())
+            if (isDuplicate):
+                flash("Error: Category already exists. "\
+                    "Please enter a new one.")
+                session.close()
+                return render_template('editcategory.html', category = categoryToEdit)
+
         # Check for empty name
         if (not request.form['name']) or \
             (request.form['name'].isspace()):
@@ -214,22 +225,6 @@ def editCategory(category_name):
         if (request.form['name'].lower() == "categories".lower()):
             # Setting "categories" as category name will cause routing issues
             flash("Error: Route keywords cannot be used as category name(s).")
-            session.close()
-            return render_template('editcategory.html', category = categoryToEdit)
-
-        # Check for self duplicate -- not much needed though
-        if (request.form['name'] == categoryToEdit.name):
-            flash("Error: Modify to new value or cancel")
-            session.close()
-            return render_template('editcategory.html', category = categoryToEdit)
-
-        # Check for duplicate with category name
-        category = session.query(Category).filter(Category.name == request.form['name'])
-        isDuplicate = (session.query(literal(True)).
-                          filter(category.exists()).scalar())
-        if (isDuplicate):
-            flash("Error: Category already exists. "\
-                "Please enter a new one.")
             session.close()
             return render_template('editcategory.html', category = categoryToEdit)
         else:
@@ -380,28 +375,30 @@ def editItem(item_name, category_name):
         return redirect(url_for('showMyItems'))
 
     if (request.method == 'POST'):
+        # Check for duplicate name values
+        if not request.form['name'] == itemToEdit.name:
+            item = session.query(Item).filter(Item.name == request.form['name'])
+            isDuplicate = (session.query(literal(True)).
+                        filter(item.exists()).scalar())
+            if (isDuplicate):
+                flash("Error: Item already exists. "\
+                    "Please enter a new one.")
+                session.close()
+                return render_template('editItem.html', category = category, item = itemToEdit)
+
         # Check for empty name
         if (not request.form['name']) or \
             (request.form['name'].isspace()):
             flash("Error: Item cannot be created with an empty name field.")
             session.close()
             return render_template('editItem.html', category = category, item = itemToEdit)
-        # Check for invalid input
+
+        # Check for invalid keywords
         if (request.form['name'].lower() == "categories".lower()) or \
             ((request.form['name'].lower() == "item".lower())) or \
             ((request.form['name'].lower() == "items".lower())):
             # Setting "categories" as category name will cause routing issues
             flash("Error: Route keywords cannot be used as item name(s).")
-            session.close()
-            return render_template('editItem.html', category = category, item = itemToEdit)
-
-        # Check for duplicate name values
-        item = session.query(Item).filter(Item.name == request.form['name'])
-        isDuplicate = (session.query(literal(True)).
-                        filter(item.exists()).scalar())
-        if (isDuplicate):
-            flash("Error: Item already exists. "\
-                "Please enter a new one.")
             session.close()
             return render_template('editItem.html', category = category, item = itemToEdit)
         else:
