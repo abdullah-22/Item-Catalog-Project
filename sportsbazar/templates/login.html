@@ -21,7 +21,7 @@
                             <!-- GOOGLE PLUS SIGN IN BUTTON-->
                             <div id="signinButton">
                                 <span class="g-signin"
-                                    data-scope="openid email"
+                                    data-scope="email profile"
                                     data-clientid="743845923083-qo99j3p4a8nb7fijfajv7itpi21g4rs9.apps.googleusercontent.com"
                                     data-redirecturi="postmessage"
                                     data-accesstype="offline"
@@ -62,9 +62,9 @@ function signInCallback(authResult) {
                 // Handle or verify the server response if necessary.
                 if (result) {
                     $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
-                   // setTimeout(function() {
-                     //   window.location.href = "/catalog";
-                    //}, 4000);
+                    setTimeout(function() {
+                        window.location.href = "/catalog";
+                        }, 4000);
                 } else if (authResult['error']) {
                     console.log('There was an error: ' + authResult['error']);
                 } else {

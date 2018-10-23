@@ -16,19 +16,19 @@ from sportsbazar.db_connect import db_connect
 def categoryJSON():
     session = db_connect()
     categories = session.query(Category).all()
-    return jsonify(Categories = [cat.serialize for cat in categories])
+    return jsonify(Categories=[cat.serialize for cat in categories])
 
 
 @app.route('/catalog/<category_name>/JSON')
 def categoryItemsJSON(category_name):
     session = db_connect()
-    category = session.query(Category).filter_by(name = category_name).one()
-    return jsonify(category = category.serialize)
+    category = session.query(Category).filter_by(name=category_name).one()
+    return jsonify(category=category.serialize)
 
 
 @app.route('/catalog/<category_name>/<item_name>/JSON')
 def itemJSON(item_name, category_name=None):
     session = db_connect()
-    item = session.query(Item).filter_by(name = item_name).one()
-    return jsonify(Item = item.serialize)
+    item = session.query(Item).filter_by(name=item_name).one()
+    return jsonify(Item=item.serialize)
 # End JSON Endpoints

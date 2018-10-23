@@ -1,6 +1,7 @@
 """
     Initialisation of the sportsbazar package.
 """
+
 from flask import Flask
 
 # Initialise the Flask app object

@@ -34,11 +34,11 @@ def db_populate():
     admin = User(
         name="Test User",
         email="testuser@domain.com",
-        picture="https://upload.wikimedia.org/wikipedia/commons/5/55/User-admin-gear.svg"
+        picture="https://upload.wikimedia.org/wikipedia"
+                + "/commons/5/55/User-admin-gear.svg"
     )
     session.add(admin)
     session.commit()
-
 
     # Creates categories of items.
     category1 = Category(name="Cricket", user=admin)
@@ -60,8 +60,6 @@ def db_populate():
     category5 = Category(name="Snooker", user=admin)
     session.add(category5)
     session.commit()
-
-
 
     # Adds items -- Cricket
     item1 = Item(
