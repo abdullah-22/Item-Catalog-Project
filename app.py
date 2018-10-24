@@ -26,17 +26,15 @@ if __name__ == "__main__":
     app.config['DB_URL'] = "sqlite:///sportsbazar.db?check_same_thread=False"
     app.config['ENV'] = "development"
     # Secret key to secure session and cookies
-    secret_key = "".join(random.choice(string.ascii_uppercase + string.digits)
-                         for x in xrange(32))
-    app.secret_key = secret_key
+    #secret_key = "".join(random.choice(string.ascii_uppercase + string.digits)
+     #                    for x in xrange(32))
+    #app.secret_key = secret_key
+    app.secret_key = 'super_secret_key'
 
     # Credentials of admin
     app.config['ADMIN_ID'] = 2
     app.config['ADMIN_NAME'] = "Abdullah A. Salman"
     app.config['ADMIN_EMAIL'] = "abdullahahmadsalman22@gmail.com"
-    # app.config['ADMIN_PICTURE'] = "https://upload.wikimedia.org/"\
-    #   "wikipedia/commons/5/55/User-admin-gear.svg"
-    app.config['ADMIN_PICTURE'] = "https://lh6.googleusercontent.com/-CPt1TTy9WyY/AAAAAAAAAAI/AAAAAAAAAdc/jDqxRdGwKI8/photo.jpg"
 
     if app.config['DB_URL'] == "sqlite:///sportsbazar.db"\
             "?check_same_thread=False":

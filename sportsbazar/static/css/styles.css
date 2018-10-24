@@ -1,29 +1,41 @@
-/* Space out content a bit */
+/* Space out the content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px auto 20px;
   background-color: #212529;
+
 }
+
 
 h2 {
   font-size: 1.5rem;
+
 }
 
+
 h3 {
-  font-size: 1.25rem
+  font-size: 1.25rem;
+
 }
+
 
 h4 {
   font-size: 1rem;
+
 }
+
 
 h5 {
-  font-size: 0.75rem
+  font-size: 0.75rem;
+
 }
 
+
 h6 {
-  font-size: 0.6rem
+  font-size: 0.6rem;
+
 }
+
 
 nav li {
   list-style: none;
@@ -31,7 +43,9 @@ nav li {
   padding: 0;
   display: flex;
   justify-content: space-around;
+
 }
+
 
 hr {
   display: block;
@@ -44,40 +58,52 @@ hr {
 .header,
 .marketing,
 .footer {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: auto 15px auto 15px;
+
 }
+
 
 /* Custom page header */
 .header {
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
+
 }
+
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 auto 0;
+
 }
+
 
 .header a {
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 400;
+
 }
+
 
 .header-logo {
   margin: 0;
   max-width: 60%;
+
 }
+
 
 .btn-outline-secondary {
   color: lightgray;
+
 }
+
 
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
+
 }
+
 
 .flash {
   background-color: lightgray;
@@ -87,30 +113,40 @@ hr {
 
 }
 
+
 .flash li {
   list-style-type: none;
   text-align: center;
 
 }
 
+
 .user-picture {
   width: 60%;
   margin: 0;
   border-radius: 150px;
+
 }
+
 
 .menu-price {
   font-weight: 700;
+
 }
+
 
 .card {
   background-color: lightgray;
-  margin: 0.3rem;
+  margin: 0.3rem auto o.3rem;
+
 }
+
 
 .card a {
   color: #212529;
+  font-size: 1rem;
 }
+
 
 /* Custom page footer */
 .footer {
@@ -118,40 +154,54 @@ hr {
   padding-top: 20px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+
 }
+
 
 /* Customize container */
 @media (min-width: 768px) {
   .container {
     max-width: 730px;
+
   }
+
 }
+
 
 .container-narrow>hr {
   margin: 30px 0;
+
 }
+
 
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   background-color: lightgray;
   border-bottom: 1px solid #e5e5e5;
-  padding-top: 25px;
-  padding-bottom: 15px;
+  padding-top: 25px auto 15px;
+
 }
+
 
 .jumbotron-message {
   font-weight: 400;
+
 }
+
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+  margin: 30px 0;
+
 }
 
+
 .marketing p+h4 {
-  margin-top: 28px;
+  margin-top: 20px;
+
 }
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -160,83 +210,141 @@ hr {
   .header,
   .marketing,
   .footer {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: auto 0 auto 0;
+
   }
+
 
   /* Space out the masthead */
   .header {
     margin-bottom: 15px;
+
   }
+
 
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+
   }
+
 }
+
 
 /* Media queries to implement responsiveness on different screen sizes */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
   h2 {
     font-size: 2rem;
+
   }
+
 
   h3 {
     font-size: 1.75rem;
+
   }
+
 
   h4 {
     font-size: 1.5rem;
+
   }
+
 
   h5 {
     font-size: 1.25rem;
+
   }
 
   h6 {
     font-size: 1rem;
+
   }
+
 }
+
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+  .header a {
+    font-weight: 500;
+
+  }
+
+
+  .card a {
+    font-size: 1.2rem;
+
+  }
+
   h2 {
     font-size: 2rem;
+
   }
+
 
   h3 {
     font-size: 1.75rem;
+
   }
+
 
   h4 {
     font-size: 1.5rem;
+
   }
+
 
   h5 {
     font-size: 1.25rem;
+
   }
+
 
   h6 {
     font-size: 1rem;
+
   }
+
 }
+
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+  .header a {
+    font-weight: 500;
+
+  }
+
+
+  .card a {
+    font-size: 1.5rem;
+
+  }
+
+
   h2 {
     font-size: 2.5rem;
+
   }
+
 
   h3 {
     font-size: 2.25rem;
+
   }
+
 
   h4 {
     font-size: 2rem;
+
   }
+
 
   h5 {
     font-size: 1.75rem
+
   }
+
 }
