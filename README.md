@@ -117,6 +117,7 @@ values to the ones with which you registered.
 * All the media (including images, links, videos) used in this website may subject to copyrights of the respective owners.
 * These are used for educational purpose only and not for any commercial use.
 * This readme file is created by following the guidelines provided on [Udacity Discussion Forum](https://discussions.udacity.com/t/movie-trailer-website-checklist-read-this-before-you-submit-your-project/39852) and using an online markdown [editor](https://stackedit.io/).
+* Helpful material: this [link](https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask), this [repo](https://github.com/SteveWooding/fullstack-nanodegree-vm/tree/master/vagrant/catalog),  this [article](https://pythonspot.com/login-to-flask-app-with-google/) and [this](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask).
 
 _(stuck at someplace? found any error? or just want to connect? see below :))_
 
