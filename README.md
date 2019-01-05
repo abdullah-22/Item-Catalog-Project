@@ -10,6 +10,8 @@ This is the fourth project of ***[Udacity Full Stack Web Developer Nanodegree Pr
 * *Uses Google Oauth 2.0 for the authentication and server side authorization with sessions and cookies.*
 * *Implements RESTful APIs endpoints with JSON.*
 
+#### *Application is live [here](http://ec2-52-14-174-173.us-east-2.compute.amazonaws.com/)*
+
 ## Introduction
 This project requires students to build a web application using [Flask](http://flask.pocoo.org/) - *a microframework for [Python](https://www.python.org/)* - that provides an online catalog to store, view, and modify information about different items in various categories. The app should:
 
